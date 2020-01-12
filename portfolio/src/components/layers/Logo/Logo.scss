@@ -1,0 +1,13 @@
+@import 'src/_variables.scss';
+
+.logo {
+    display: block;
+    color: $dark;
+    font-size: 1.4375rem;
+    font-weight: bold;
+    line-height: 5rem;
+    max-width: 10.9375rem;
+    border-bottom: 0.0625rem solid rgba(226, 220, 220, 0.774);
+    cursor: pointer;
+}
+

@@ -1,0 +1,61 @@
+@import 'src/_variables.scss';
+
+.menu {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    max-width: 69.5625rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 10;
+}
+
+.burger-menu_btn {
+    display: block;
+    width: 3.125rem;
+    height: 3.125rem;
+    background: $dark;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+
+.burger-menu_btn span,
+.burger-menu_btn span::before,
+.burger-menu_btn span::after {
+    position: absolute;
+    top: 50%; margin-top: -0.0625rem;
+    left: 50%; margin-left: -0.9375rem;
+    width: 1.875rem;
+    height: 0.125rem;
+    background-color: $white;
+}
+
+.burger-menu_btn span::before,
+.burger-menu_btn span::after {
+    content: '';
+    display: block;
+    transition: 0.2s ease;
+}
+
+.burger-menu_btn span::before {
+    transform: translateY(-0.625rem);
+}
+
+.burger-menu_btn span::after {
+    transform: translateY(0.625rem);
+}
+
+.burger-menu_btn_active span {
+    height: 0;
+}
+
+.burger-menu_btn_active span::before {
+    transform: rotate(45deg);
+} 
+
+.burger-menu_btn_active span::after {
+    transform: rotate(-45deg);
+} 

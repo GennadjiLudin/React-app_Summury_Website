@@ -1,0 +1,20 @@
+.title {
+    width: 47.5rem;
+
+    &-about {
+        width: 29%;
+    }
+
+    &__head {
+        font-size: 2.1875rem;
+        font-weight: bold;
+        width: 60%;
+        line-height: 4.375rem;
+    }
+
+    &__text {
+        margin-top: 2.1875rem;
+        color: rgb(95, 93, 93);
+        width: 80%;
+    }
+}

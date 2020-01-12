@@ -1,0 +1,13 @@
+.paralax {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 420px;
+    height: 100%;
+
+    &__wrap {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+}

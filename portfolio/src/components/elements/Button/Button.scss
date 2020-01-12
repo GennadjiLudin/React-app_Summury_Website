@@ -1,0 +1,24 @@
+@import 'src/_variables.scss';
+
+.button {
+    border: none;
+    display: block;
+    text-transform: uppercase;
+
+    &-projects {
+        padding-bottom: .5rem;
+        border: 0.1rem solid $white;
+        background: $white;
+        margin-top: 1rem;
+        font-family: "Raleway", sans-serif;
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: $dark;
+        cursor: pointer;
+
+        &:hover {
+            color: $grey;
+            border-bottom: 0.1rem solid $grey;
+        }
+    }
+}

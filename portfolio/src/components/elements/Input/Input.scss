@@ -1,0 +1,27 @@
+@import 'src/_variables.scss';
+
+.label-input {
+    color: $grey;
+    font-size: .85rem;
+}
+
+.input {
+    width: 100%;
+    height: 40px;
+    background: #f8f7f7;
+    margin-top: .5rem;
+    border: 0;
+    color: #000000;
+    font-weight: 500;
+    line-height: 40px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    padding-left: 15px;
+}
+
+.error-text {
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    color:red;
+}
