@@ -1,9 +1,9 @@
 .paralax-el {
-    width:80px;
-    height: 80px;
     position: absolute;
 
     &-first-layer {
+        width:60px;
+        height: 60px;
         top: 40px;
         right: 20px;
         z-index: 2;
@@ -18,8 +18,8 @@
     }
 
     &-third-layer {
-        width: 220px;
-        height: 220px;
+        width: 180px;
+        height: 180px;
         top: 150px;
         right: 20px;
         z-index: 4;
@@ -27,51 +27,56 @@
 }
 
 .webpack {
-    top: 0;
-    left: 0;
+    top: 300px;
+    left: 305px;
 }
 
 .ps {
-    top: 0;
-    left: 0;
+    top: 600px;
+    left: 100px;
 }
 
 .figma {
-    top: 0;
-    left: 0;
+    top: 460px;
+    left: 0px;
 }
 
 .git {
-    top: 0;
-    left: 0;
+    top: 75px;
+    left: 40px;
 }
 
 .nodejs {
-    top: 0;
-    left: 0;
+    top: 685px;
+    left: -30px;
 }
 
 .html5 {
-    top: 0;
-    left: 0;
+    top: 400px;
+    left: 170px;
 }
 
 .css-3 {
-    top: 0;
-    left: 0;
+    top: 50px;
+    left: 250px;
 }
 
 .sass {
-    top: 0;
-    left: 0;
+    top: 780px;
+    left: 220px;
 }
 
 .java-script {
-    top: 0;
-    left: 0;
+    top: 185px;
+    left: 25px;
 }
 
 .react {
-    top: 320px;
-    left: 150px;
+    top: 560px;
+    left: 240px;
+}
+
+.redux {
+    top: 830px;
+    left: 10px;
 }
