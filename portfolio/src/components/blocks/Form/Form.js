@@ -103,7 +103,7 @@ class Form extends Component {
         const {values} = this.state;
         return (
             <form className="form">
-                <Input name="name" type="text" dataInput={values.name} inputName="Username:" inputHandler={this.inputHandler} error={values.name.error}/>
+                <Input name="name" type="text" htmlFor="email" dataInput={values.name} inputName="Username:" inputHandler={this.inputHandler} error={values.name.error}/>
                 <Input name="phone" type="tel" dataInput={values.phone} inputName="Phone:" inputHandler={this.inputHandler} />
                 <Input name="email" type="email" dataInput={values.email} inputName="Email:" inputHandler={this.inputHandler} />
                 <Textarea name="message" textareaName="Message:" textareaHandler={this.inputHandler} />

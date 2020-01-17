@@ -3,7 +3,7 @@ import React from 'react';
 // Components 
 import ProjectsBlock from './ProjectsBlock/ProjectsBlock';
 import Title from '../../elements/Title/Title';
-import Sidebars from '../../wraps/ParalaxWrap/ParalaxWrap';
+import ParalaxWrap from '../../wraps/ParalaxWrap/ParalaxWrap';
 
 // Styles
 import './Home.scss';
@@ -23,7 +23,7 @@ const Home = () => {
                 title="MY CREATIVE AND SIMPLICITY MODERN PROJECTS" 
                 text="Please check my portfolio. All project is clean and simplicity modern style. You can buy this template." 
             />
-            <Sidebars />
+            <ParalaxWrap />
             <ProjectsBlock variables="projects-container" projects={projects} />
         </div> 
     );

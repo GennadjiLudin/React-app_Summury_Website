@@ -21,6 +21,11 @@
         position: absolute;
         left: 1.5rem;
         bottom: 1.8rem;
+        opacity: 0;
+    }
+
+    &:hover &__title-wrap {
+        opacity: 1;
     }
 
     &__title, &__subtitle {

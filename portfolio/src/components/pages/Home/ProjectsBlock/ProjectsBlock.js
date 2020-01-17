@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
 
 // Components 
@@ -8,17 +8,11 @@ import Button from '../../../elements/Button/Button';
 // Styles
 import './ProjectsBlock.scss';
 
-const ProjectsBlock = ({variables, minCountNum, projects}) => {
-    const [showProject, setShowProject] = useState(false);
-
-    const toggleProjects = (e) => {
-        e.preventDefault();
-        setShowProject(!showProject);
-    }
+const ProjectsBlock = ({variables, projects}) => {
 
     return (
         <div className="block-projects">
-            <Projects showProject={showProject} variables={variables} projects={projects} />
+            <Projects variables={variables} projects={projects} />
             <Link to="/projects"> <Button text="Show all projects" /> </Link> 
         </div>
         
