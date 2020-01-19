@@ -1,4 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
+import { Formik } from 'formik';
+import * as Yup from 'yup';
 
 // Components 
 import Input from '../../elements/Input/Input';
@@ -8,109 +10,109 @@ import Textarea from '../../elements/Textarea/Textarea';
 // Styles
 import './Form.scss';
 
-class Form extends Component {
-    state = {
-        values: {
-            name: {
-                value: '',
-                isRequired: true,
-                error: '',
-            },
-            phone: {
-                value: '',
-                error: '',
-            },
-            email: {
-                value: '',
-                isRequired: true,
-                error: '',
-            },
-            message: {
-                value: '',
-                isRequired: true,
-                error: '',
-            },
-        }
-    };
+const validationSchema = Yup.object().shape({
+  name: Yup.string()
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Required'),
+  phone: Yup.number()
+    .min(11, 'Too Short!')
+    .max(12, 'Too Long!'),
+  email: Yup.string()
+    .email('Invalid email')
+    .required('Required'),
+  message: Yup.string()
+    .min(2, 'Too Short!')
+    .required('Required'),
+});
 
-    validate = (e) => {
-        e.preventDefault();
-        const {values} = this.state;
-        let isValidate = false;
-        Object.keys(values).map(el => {
-            if (values[el].isRequired) {
-                let isEmpty = this._isEmpty(values[el].value, el);
-                switch (el) {
-                    case 'name':
-                        isValidate = true;
-                        console.log(isEmpty);
-                        if (isEmpty) {
-                            isValidate = false;
-                        }  
-                        break;
-                    case 'email':
-                        console.log(isEmpty);
-                        isValidate = true;
-                        if (isEmpty) {
-                            isValidate = false;
-                        } else {
-                            isValidate = this._validateEmail();
-                        }
-                        break;
-                
-                    default:
-                        break;
-                }
-            }
-        });
-    }
+const ContactForm = () => {
+    return (
+      <Formik
+        initialValues={{
+          name: '',
+          phone: '',
+          email: '',
+          message: '',
+        }}
+        validationSchema={validationSchema}
+        onSubmit={(values, {setSubmitting, resetForm}) => {
+          setSubmitting(true);
 
-    _isEmpty = (value, name) => {
-        const {values} = this.state;
-        let newObj = {
-            ...values,
-            [name]: {
-                ...values[name],
-                error: value === '' ? 'Поле не должно быть пустым!' : ''
-            }
-        };
+          setTimeout(() => {
+            alert(JSON.stringify(values, null, 4))
+            resetForm();
+            setSubmitting(false);
+          }, 500);
+        }}
+        className="form"
+      >
+        {({values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting}) => (
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="name">Name:</label>
+            <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Enter your name"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.name}
+            />
+            {touched.name && errors.name ? (<div>{errors.name}</div>) : null}
+          </div>
+          <div>
+            <label htmlFor="phone">Phone:</label>
+            <input
+                id="phone"
+                name="phone"
+                type="tel"
+                placeholder="Enter contact phone"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.phone}
+            />
+            {touched.phone && errors.phone ? (<div>{errors.phone}</div>) : null}
+          </div>
+          <div>
+            <label htmlFor="email">Email:</label>
+            <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Enter your email"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.email}
+            />
+            {touched.email && errors.email ? (<div>{errors.email}</div>) : null}
+          </div>
+          <div>
+            <label htmlFor="message">Message:</label>
+            <textarea
+                id="message"
+                name="message"
+                type="text"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.message}
+            />
+            {touched.message && errors.message ? (<div>{errors.message}</div>) : null}
+          </div>
+          <Button text="Submit" variables="form-button" disabled={isSubmitting} />
+        </form>
+        )}
+      </Formik>
+    );
+};
 
-        this.setState({
-            values: newObj
-        })
-        console.log(newObj);
-        return value === '' ? true : false;
-    }
+export default ContactForm;
 
-    _validateEmail = () => {
 
-    }
-
-    inputHandler = (e) => {
-        const {values} = this.state;
-        this.setState({
-            values: {
-                ...values,
-                [e.target.name]: {
-                    ...values[e.target.name],
-                    value: e.target.value
-                }
-            }
-        });
-    }
-
-    render() {
-        const {values} = this.state;
-        return (
-            <form className="form">
-                <Input name="name" type="text" htmlFor="email" dataInput={values.name} inputName="Username:" inputHandler={this.inputHandler} error={values.name.error}/>
-                <Input name="phone" type="tel" dataInput={values.phone} inputName="Phone:" inputHandler={this.inputHandler} />
-                <Input name="email" type="email" dataInput={values.email} inputName="Email:" inputHandler={this.inputHandler} />
-                <Textarea name="message" textareaName="Message:" textareaHandler={this.inputHandler} />
-                <Button text="Send" clickHandler={this.validate} variables="form-button" />
-            </form>
-        );
-    }
-}
-
-export default Form;
+                // <Input name="name" type="text" htmlFor="name" dataInput={values.name} inputName="Username:" inputHandler={this.inputHandler} error={values.name.error}/>
+                // <Input name="phone" type="tel" htmlFor="phone" dataInput={values.phone} inputName="Phone:" inputHandler={this.inputHandler} error={values.phone.error}/>
+                // <Input name="email" type="email" htmlFor="email" dataInput={values.email} inputName="Email:" inputHandler={this.inputHandler} error={values.email.error}/>
+                // <Textarea name="message" htmlFor="message" textareaName="Message:" textareaHandler={this.inputHandler} errorText={values.message.error}/>
+                // <Button text="Send" clickHandler={this.validate} variables="form-button" />
+ 
