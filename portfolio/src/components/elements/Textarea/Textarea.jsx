@@ -5,13 +5,20 @@ import React from 'react';
 // Styles
 import './Textarea.scss';
 
-const Textarea = ({text, name, textareaHandler, errorText, textareaName}) => {
+const Textarea = ({valuesName, name, handleChange, handleBlur, inputName, error, errorName}) => {
     return (
         <label htmlFor={name} className="label-textarea">
-            {textareaName}
-            <textarea className="textarea" id={name} name={name} onChange={textareaHandler} rows="6">
-            </textarea>
-            <div className="error-text">{errorText}</div>
+            {inputName}
+            <textarea 
+                className="textarea"
+                id={name}
+                name={name}
+                onBlur={handleBlur}
+                onChange={handleChange}
+                value={valuesName}
+                rows="6"
+            />
+            <div className="error-text">{error && errorName ? errorName : null}</div>
         </label>
 
     );

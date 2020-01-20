@@ -45,62 +45,52 @@ const ContactForm = () => {
             setSubmitting(false);
           }, 500);
         }}
-        className="form"
       >
         {({values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting}) => (
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="name">Name:</label>
-            <input
-                id="name"
-                name="name"
-                type="text"
-                placeholder="Enter your name"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.name}
+        <form onSubmit={handleSubmit} className="form">
+            <Input 
+              name="name"
+              type="text"
+              valuesName={values.name}
+              handleChange={handleChange}
+              handleBlur={handleBlur}
+              inputName="Name:"
+              error={touched.name}
+              errorName={errors.name}
+              holderText="Enter your name"
             />
-            {touched.name && errors.name ? (<div>{errors.name}</div>) : null}
-          </div>
-          <div>
-            <label htmlFor="phone">Phone:</label>
-            <input
-                id="phone"
-                name="phone"
-                type="tel"
-                placeholder="Enter contact phone"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.phone}
+            <Input 
+              name="phone"
+              type="tel"
+              valuesName={values.phone}
+              handleChange={handleChange}
+              handleBlur={handleBlur}
+              inputName="Phone:"
+              error={touched.phone}
+              errorName={errors.phone}
+              holderText="Enter contact phone"
+            />  
+            <Input 
+              name="email"
+              type="email"
+              valuesName={values.email}
+              handleChange={handleChange}
+              handleBlur={handleBlur}
+              inputName="Email:"
+              error={touched.email}
+              errorName={errors.email}
+              holderText="Enter your email"
+            />   
+            <Textarea 
+              name="message"
+              valuesName={values.message}
+              handleChange={handleChange}
+              handleBlur={handleBlur}
+              inputName="Message:"
+              error={touched.message}
+              errorName={errors.message}
             />
-            {touched.phone && errors.phone ? (<div>{errors.phone}</div>) : null}
-          </div>
-          <div>
-            <label htmlFor="email">Email:</label>
-            <input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="Enter your email"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.email}
-            />
-            {touched.email && errors.email ? (<div>{errors.email}</div>) : null}
-          </div>
-          <div>
-            <label htmlFor="message">Message:</label>
-            <textarea
-                id="message"
-                name="message"
-                type="text"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.message}
-            />
-            {touched.message && errors.message ? (<div>{errors.message}</div>) : null}
-          </div>
-          <Button text="Submit" variables="form-button" disabled={isSubmitting} />
+          <Button type="submit" text="Submit" variables="form-button" disabled={isSubmitting} />
         </form>
         )}
       </Formik>

@@ -6,7 +6,7 @@
 }
 
 .input {
-    width: 100%;
+    width: 93%;
     height: 40px;
     background: #f8f7f7;
     margin-top: .5rem;
@@ -17,6 +17,7 @@
     font-family: 'Raleway', sans-serif;
     font-size: 13px;
     padding-left: 15px;
+    overflow: hidden;
 }
 
 .error-text {

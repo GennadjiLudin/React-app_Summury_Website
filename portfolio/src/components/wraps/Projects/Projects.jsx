@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 
 // Components
 import Project from '../../elements/Project/Project';
@@ -7,16 +7,10 @@ import Project from '../../elements/Project/Project';
 import './Projects.scss';
 
 const Projects = ({showProject, variables, projects}) => {
-    // const [showCountProject, setCount] = useState(minCountNum);
-
-    // useEffect(() => {
-    //     setCount(showProject ? projects.length : minCountNum);
-    // }, [showProject]);
 
     return (
         <div className={`projects ${variables}`}>
             {projects.map((project, index) => (
-                // index < showCountProject ? 
                     !project.type ? (
                         <Project 
                             {...project}
@@ -28,7 +22,6 @@ const Projects = ({showProject, variables, projects}) => {
                             key={project.id}
                         />
                     )
-                // : null
             ))}
         </div>
     );

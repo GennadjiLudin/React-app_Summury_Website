@@ -10,7 +10,7 @@
     margin-top: 3.125rem;   
     
     &-button {
-        width: 220px;
+        width: 205px;
         height: 40px;   
         margin-top: 40px;
         background: #f8f7f7;
@@ -22,5 +22,15 @@
         font-weight: 900;
         line-height: 40px;
         font-size: 13px;
+        cursor: pointer;
+        box-shadow:
+        0 1px rgba(255,255,255,.2) inset,
+        0 2px 3px rgba(0,1,6,.5),
+        0 0 1px 1px rgba(0,1,6,.2);
+
+        &:active {
+            transform: translate(3px);
+            box-shadow: none;
+        }
     }
 }
