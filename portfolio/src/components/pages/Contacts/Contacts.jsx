@@ -10,8 +10,8 @@ function Contacts() {
   return ( 
     <div className = "contacts">
       <Title 
-        title="Contact"
-        text="To contact us please use the contact form visible. When sending files, please use the following e-mail"
+        title="Контакты"
+        text="Для связи со мной вы можете воспользоваться формой ниже или написать мне в социальных сетях. Ссылки на соц. сети вконце страницы."
       />
       <ContactForm />
     </div>

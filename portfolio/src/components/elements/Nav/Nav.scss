@@ -18,15 +18,13 @@
     border-bottom-left-radius: 3.125rem;
     margin-right: -1.25rem;
     padding: 0 1rem;
-    transition: 0.5s ease;
     transform-origin: right center;
     transform: scaleX(0) translateX(10%);
-    opacity: 0;
+    transition: 0.5s ease;
 }
 
 .nav__list-active {
     transform: scaleX(1) translateX(0);
-    opacity: 1;  
 }
 
 .nav__item {

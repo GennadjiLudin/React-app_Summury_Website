@@ -20,8 +20,8 @@ const Home = () => {
     return (
         <div className="home">
             <Title 
-                title="MY CREATIVE AND SIMPLICITY MODERN PROJECTS" 
-                text="Please check my portfolio. All project is clean and simplicity modern style. You can buy this template." 
+                title="Проекты для портфолио" 
+                text="Ниже представлен краткий список моих проектов:" 
             />
             <ParalaxWrap />
             <ProjectsBlock variables="projects-container" projects={projects} />

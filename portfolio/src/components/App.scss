@@ -5,6 +5,15 @@
   padding: 0;
 }
 
+:focus, :hover, ::-moz-focus-outer, ::-moz-focus-inner, button {
+  outline: none;
+}
+
+::-moz-focus-outer, ::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
 html, body {
   font-size: 100%;
 }

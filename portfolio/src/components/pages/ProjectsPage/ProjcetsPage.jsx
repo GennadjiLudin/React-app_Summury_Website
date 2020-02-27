@@ -22,8 +22,8 @@ function ProjectsPage() {
   return ( 
     <div className = "projects-page">
       <Title 
-        title="Projects"
-        text="Please check my portfolio. All project is clean and simplicity modern style. You can buy this template."
+        title="Проекты"
+        text="На этой странице вы можете ознакомиться со всем проектами, в которых я участвовал."
       />
       <Projects variables="projects-page projects-container" projects={projects} />           
     </div>

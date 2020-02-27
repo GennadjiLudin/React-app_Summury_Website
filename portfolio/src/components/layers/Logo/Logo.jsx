@@ -15,7 +15,7 @@ const Logo = ({style, text}) => {
 }
 
 Logo.defaultProps = {
-    text: "Ludin G.V",
+    text: "Лудин Геннадий Валерьевич",
     style: '',
 }
 
